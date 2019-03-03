@@ -10,10 +10,11 @@ public class MainActivity extends AppCompatActivity {
 
     private EditText edt_pantalla;
     private Button btn_num1, btn_num2, btn_num3, btn_num4, btn_num5, btn_num6, btn_num7, btn_num8,
-            btn_num9, btn_num0, btn_punto, btn_mask, btn_igual, btn_borrar, btn_limpiar, btn_arriba,
-            btn_abajo, btn_izquierda, btn_derecha, btn_subneteo, btn_suma, btn_resta,
-            btn_multiplicacion, btn_division, btn_potencia, btn_raiz, btn_factorial, btn_porcentage,
-            btn_recuperar;
+            btn_num9, btn_num0, btn_punto, btn_igual, btn_borrar, btn_limpiar, btn_izquierda,
+            btn_derecha, btn_suma, btn_resta, btn_multiplicacion, btn_division, btn_potencia,
+            btn_raiz, btn_factorial, btn_porcentage, btn_recuperar;
+    //private float num1, num2, resultado, resAnterior;
+    String num1, num2, signo;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -31,15 +32,11 @@ public class MainActivity extends AppCompatActivity {
         btn_num9 = (Button) findViewById(R.id.btn_num9);
 
         btn_punto = (Button) findViewById(R.id.btn_punto);
-        btn_mask = (Button) findViewById(R.id.btn_mask);
         btn_igual = (Button) findViewById(R.id.btn_igual);
         btn_borrar = (Button) findViewById(R.id.btn_borrar);
         btn_limpiar = (Button) findViewById(R.id.btn_limpiar);
-        btn_arriba = (Button) findViewById(R.id.btn_arriba);
-        btn_abajo = (Button) findViewById(R.id.btn_abajo);
         btn_izquierda = (Button) findViewById(R.id.btn_izquierda);
         btn_derecha = (Button) findViewById(R.id.btn_derecha);
-        btn_subneteo = (Button) findViewById(R.id.btn_subneteo);
         btn_suma = (Button) findViewById(R.id.btn_suma);
         btn_resta = (Button) findViewById(R.id.btn_resta);
         btn_multiplicacion = (Button) findViewById(R.id.btn_multiplicacion);
@@ -85,26 +82,94 @@ public class MainActivity extends AppCompatActivity {
             case R.id.btn_num9:
                 edt_pantalla.setText(edt_pantalla.getText().toString()+"9");
                 break;
-
             case R.id.btn_punto:
-                edt_pantalla.setText(edt_pantalla.getText().toString()+".");
-                break;
-            case R.id.btn_mask:
-                edt_pantalla.setText(edt_pantalla.getText().toString()+"/");
+                String cadenaPunto;
+                cadenaPunto = edt_pantalla.getText().toString();
+                if (cadenaPunto.length()<=0){
+                    edt_pantalla.setText("0.");
+                } else{
+                    if(!existePunto(edt_pantalla.getText().toString())){
+                        edt_pantalla.setText(edt_pantalla.getText().toString()+".");
+                    }
+                }
+
                 break;
             case R.id.btn_igual:
+                String resultado;
+                num2= edt_pantalla.getText().toString();
+                if(!num2.equals("")){
+                    resultado=calcular(num1,num2,signo);
+                    edt_pantalla.setText(resultado);
+                }
                 break;
             case R.id.btn_borrar:
-
+                String cadenaBorrar;
+                cadenaBorrar = edt_pantalla.getText().toString();
+                if (cadenaBorrar.length()>0){
+                    cadenaBorrar = cadenaBorrar.substring(0, cadenaBorrar.length()-1);
+                    edt_pantalla.setText(cadenaBorrar);
+                }
                 break;
             case R.id.btn_limpiar:
                 edt_pantalla.setText("");
                 break;
-            case R.id.btn_arriba:
-
+            case R.id.btn_suma:
+                if(!edt_pantalla.getText().toString().equals("")){
+                    num1= edt_pantalla.getText().toString();
+                    signo="+";
+                }
+                edt_pantalla.setText("");
                 break;
-            case R.id.btn_abajo:
-
+            case R.id.btn_resta:
+                if(!edt_pantalla.getText().toString().equals("")){
+                    num1= edt_pantalla.getText().toString();
+                    signo="-";
+                }
+                edt_pantalla.setText("");
+                break;
+            case R.id.btn_multiplicacion:
+                if(!edt_pantalla.getText().toString().equals("")){
+                    num1= edt_pantalla.getText().toString();
+                    signo="*";
+                }
+                edt_pantalla.setText("");
+                break;
+            case R.id.btn_division:
+                if(!edt_pantalla.getText().toString().equals("")){
+                    num1= edt_pantalla.getText().toString();
+                    signo="/";
+                }
+                edt_pantalla.setText("");
+                break;
+            case R.id.btn_potencia:
+                if(!edt_pantalla.getText().toString().equals("")){
+                    num1= edt_pantalla.getText().toString();
+                    signo="^";
+                }
+                edt_pantalla.setText("");
+                break;
+            case R.id.btn_porcentage:
+                if(!edt_pantalla.getText().toString().equals("")){
+                    num1= edt_pantalla.getText().toString();
+                    signo="%";
+                }
+                edt_pantalla.setText("");
+                break;
+            case R.id.btn_factorial:
+                int num, resFactorial=1;
+                if(!existePunto(edt_pantalla.getText().toString())){
+                    num = Integer.parseInt(edt_pantalla.getText().toString());
+                    for (int i = 1; i <= num; i++) {
+                        resFactorial = resFactorial*i;
+                    }
+                    edt_pantalla.setText(String.valueOf(resFactorial));
+                }
+                break;
+            case R.id.btn_raiz:
+                Double raiz = Math.sqrt(Double.parseDouble(edt_pantalla.getText().toString()));
+                edt_pantalla.setText(String.valueOf(raiz));
+                break;
+            case R.id.btn_recuperar:
                 break;
             case R.id.btn_izquierda:
 
@@ -112,57 +177,48 @@ public class MainActivity extends AppCompatActivity {
             case R.id.btn_derecha:
 
                 break;
-            case R.id.btn_subneteo:
-
-                break;
-            case R.id.btn_suma:
-                edt_pantalla.setText(edt_pantalla.getText().toString()+"+");
-                break;
-            case R.id.btn_resta:
-                edt_pantalla.setText(edt_pantalla.getText().toString()+"-");
-                break;
-            case R.id.btn_multiplicacion:
-                edt_pantalla.setText(edt_pantalla.getText().toString()+"*");
-                break;
-            case R.id.btn_division:
-                edt_pantalla.setText(edt_pantalla.getText().toString()+"/");
-                break;
-            case R.id.btn_potencia:
-                edt_pantalla.setText(edt_pantalla.getText().toString()+"^");
-                break;
-            case R.id.btn_raiz:
-                edt_pantalla.setText(edt_pantalla.getText().toString()+"¬");
-                break;
-            case R.id.btn_factorial:
-                edt_pantalla.setText(edt_pantalla.getText().toString()+"!");
-                break;
-            case R.id.btn_porcentage:
-                edt_pantalla.setText(edt_pantalla.getText().toString()+"%");
-                break;
-            case R.id.btn_recuperar:
-
-                break;
         }
     }
 
-
-
-    //Metodos para subneteo
-    public String [] separarCadena(String cadena){
-        //Arreglo que guardará la red y la máscara
-        String [] mascara = cadena.split("/");
-        //Arreglo que guardará en distintas posiciones los octetos de la red
-        String [] octetos = mascara[0].split("[.]");
-        //Datos de la red
-        String [] datos = new String[5];
-        System.arraycopy(octetos, 0, datos, 0, 4);
-        datos[4] = mascara[1];
-        for (int i = 0; i < datos.length; i++) {
-            System.out.println(datos[i]);
-
+    public boolean existePunto(String cadena){
+        for (int i = 0; i < cadena.length(); i++) {
+            if (cadena.charAt(i)=='.'){
+                return true;
+            }
         }
-        return octetos;
+        return false;
     }
+
+    public void factorial(){
+
+        int num, resFactorial=1;
+        num = Integer.parseInt(edt_pantalla.getText().toString());
+
+        for (int i = 1; i < num; i++) {
+            resFactorial = resFactorial*i;
+        }
+        edt_pantalla.setText(resFactorial);
+    }
+    public String calcular(String memoria1, String memoria2, String signo){
+        Double resultado=0.0;
+        String respuesta;
+        if (signo.equals("+")){
+            resultado= Double.parseDouble(memoria1)+Double.parseDouble(memoria2);
+        } else if (signo.equals("-")){
+            resultado= Double.parseDouble(memoria1)-Double.parseDouble(memoria2);
+        } else if (signo.equals("*")){
+            resultado= Double.parseDouble(memoria1)*Double.parseDouble(memoria2);
+        } else if (signo.equals("/")){
+            resultado= Double.parseDouble(memoria1)/Double.parseDouble(memoria2);
+        } else if (signo.equals("^")){
+            resultado = Math.pow(Double.parseDouble(memoria1),Double.parseDouble(memoria2));
+        } else if (signo.equals("%")){
+            resultado= Double.parseDouble(memoria1)*(Double.parseDouble(memoria2)/100);
+        }
+        respuesta = String.valueOf(resultado);
+        return respuesta;
+    }
+
 
 
 }
