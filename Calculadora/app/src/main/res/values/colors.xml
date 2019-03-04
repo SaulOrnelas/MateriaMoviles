@@ -4,4 +4,10 @@
     <color name="colorPrimaryDark">#534600</color>
     <color name="colorAccent">#D81B60</color>
     <color name="lightGray">#B6BFB4</color>
+    <color name="white">#FFFFFF</color>
+    <color name="black">#000000</color>
+    <color name="operadores">#007ca9</color>
+    <color name="igual">#b32ad4e7</color>
+    <color name="turquiose">#2d084e</color>
+    <color name="red">#b5c40101</color>
 </resources>

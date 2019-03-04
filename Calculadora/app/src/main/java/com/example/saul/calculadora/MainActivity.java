@@ -5,16 +5,21 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.Toast;
+
+import java.text.DecimalFormat;
 
 public class MainActivity extends AppCompatActivity {
 
     private EditText edt_pantalla;
     private Button btn_num1, btn_num2, btn_num3, btn_num4, btn_num5, btn_num6, btn_num7, btn_num8,
-            btn_num9, btn_num0, btn_punto, btn_igual, btn_borrar, btn_limpiar, btn_izquierda,
-            btn_derecha, btn_suma, btn_resta, btn_multiplicacion, btn_division, btn_potencia,
-            btn_raiz, btn_factorial, btn_porcentage, btn_recuperar;
-    //private float num1, num2, resultado, resAnterior;
-    String num1, num2, signo;
+            btn_num9, btn_num0, btn_punto, btn_igual, btn_borrar, btn_limpiar, btn_suma, btn_resta,
+            btn_multiplicacion, btn_division, btn_potencia, btn_raiz, btn_factorial, btn_porcentage,
+            btn_recuperar, btn_menosDec, btn_masDec;
+    String num1, num2, signo, resultado = "", cantDecimal = "#.####";
+    int cantDes=4;
+    DecimalFormat decimal;
+    Toast toast;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -35,8 +40,8 @@ public class MainActivity extends AppCompatActivity {
         btn_igual = (Button) findViewById(R.id.btn_igual);
         btn_borrar = (Button) findViewById(R.id.btn_borrar);
         btn_limpiar = (Button) findViewById(R.id.btn_limpiar);
-        btn_izquierda = (Button) findViewById(R.id.btn_izquierda);
-        btn_derecha = (Button) findViewById(R.id.btn_derecha);
+        btn_menosDec = (Button) findViewById(R.id.btn_menosDec);
+        btn_masDec = (Button) findViewById(R.id.btn_masDec);
         btn_suma = (Button) findViewById(R.id.btn_suma);
         btn_resta = (Button) findViewById(R.id.btn_resta);
         btn_multiplicacion = (Button) findViewById(R.id.btn_multiplicacion);
@@ -47,7 +52,7 @@ public class MainActivity extends AppCompatActivity {
         btn_porcentage = (Button) findViewById(R.id.btn_porcentage);
         btn_recuperar = (Button) findViewById(R.id.btn_recuperar);
 
-
+        decimal = new DecimalFormat(cantDecimal);
     }
 
     public void onClick(View v){
@@ -95,11 +100,10 @@ public class MainActivity extends AppCompatActivity {
 
                 break;
             case R.id.btn_igual:
-                String resultado;
                 num2= edt_pantalla.getText().toString();
                 if(!num2.equals("")){
                     resultado=calcular(num1,num2,signo);
-                    edt_pantalla.setText(resultado);
+                    edt_pantalla.setText(decimal.format(Double.parseDouble(resultado)));
                 }
                 break;
             case R.id.btn_borrar:
@@ -163,19 +167,47 @@ public class MainActivity extends AppCompatActivity {
                         resFactorial = resFactorial*i;
                     }
                     edt_pantalla.setText(String.valueOf(resFactorial));
+                    resultado = edt_pantalla.getText().toString();
                 }
                 break;
             case R.id.btn_raiz:
                 Double raiz = Math.sqrt(Double.parseDouble(edt_pantalla.getText().toString()));
                 edt_pantalla.setText(String.valueOf(raiz));
+                resultado = edt_pantalla.getText().toString();
+                edt_pantalla.setText(decimal.format(raiz));
                 break;
             case R.id.btn_recuperar:
+                edt_pantalla.setText(decimal.format(Double.parseDouble(resultado)));
                 break;
-            case R.id.btn_izquierda:
-
+            case R.id.btn_menosDec:
+                if (cantDecimal.length()>2){
+                    cantDecimal = cantDecimal.substring(0, cantDecimal.length()-1);
+                    decimal = new DecimalFormat(cantDecimal);
+                    if(!resultado.equals("")){
+                        edt_pantalla.setText(decimal.format(Double.parseDouble(resultado)));
+                    }
+                    cantDes--;
+                }
+                toast = Toast.makeText(
+                        getApplicationContext(),
+                        cantDes + " Decimales",
+                        Toast.LENGTH_LONG);
+                toast.show();
                 break;
-            case R.id.btn_derecha:
-
+            case R.id.btn_masDec:
+                if (cantDecimal.length()<12){
+                    cantDecimal = cantDecimal + "#";
+                    decimal = new DecimalFormat(cantDecimal);
+                    if(!resultado.equals("")){
+                        edt_pantalla.setText(decimal.format(Double.parseDouble(resultado)));
+                    }
+                    cantDes++;
+                }
+                toast = Toast.makeText(
+                        getApplicationContext(),
+                        cantDes + " Decimales",
+                        Toast.LENGTH_LONG);
+                toast.show();
                 break;
         }
     }
