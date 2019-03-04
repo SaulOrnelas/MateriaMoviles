@@ -9,3 +9,5 @@ En este repositorio se encuentran las aplicaciones desarrolladas en la materia d
 * Acceso
 * Calculadora
 * Hola Mundo
+* PruebaDebug
+* ValueStrings
