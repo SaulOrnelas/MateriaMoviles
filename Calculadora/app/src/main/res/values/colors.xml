@@ -5,6 +5,7 @@
     <color name="colorAccent">#D81B60</color>
     <color name="lightGray">#B6BFB4</color>
     <color name="white">#FFFFFF</color>
+    <color name="backOp">#e7e5e5</color>
     <color name="black">#000000</color>
     <color name="operadores">#007ca9</color>
     <color name="igual">#b32ad4e7</color>

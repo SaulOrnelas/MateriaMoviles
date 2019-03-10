@@ -63,7 +63,7 @@
                     android:textSize="25sp"
                     android:layout_weight="1"
                     android:onClick="onClick"
-                    android:background="@color/white"
+                    android:background="@color/backOp"
                     android:textColor="@color/operadores"
                     android:text="@string/mas" />
 
@@ -74,7 +74,7 @@
                     android:textSize="25sp"
                     android:layout_weight="1"
                     android:onClick="onClick"
-                    android:background="@color/white"
+                    android:background="@color/backOp"
                     android:textColor="@color/operadores"
                     android:text="@string/menos" />
             </LinearLayout>
@@ -122,7 +122,7 @@
                     android:textSize="25sp"
                     android:layout_weight="1"
                     android:onClick="onClick"
-                    android:background="@color/white"
+                    android:background="@color/backOp"
                     android:textColor="@color/operadores"
                     android:text="@string/multiplicar" />
 
@@ -133,7 +133,7 @@
                     android:textSize="25sp"
                     android:layout_weight="1"
                     android:onClick="onClick"
-                    android:background="@color/white"
+                    android:background="@color/backOp"
                     android:textColor="@color/operadores"
                     android:text="@string/dividir" />
             </LinearLayout>
@@ -180,7 +180,7 @@
                     android:textSize="25sp"
                     android:layout_weight="1"
                     android:onClick="onClick"
-                    android:background="@color/white"
+                    android:background="@color/backOp"
                     android:textColor="@color/operadores"
                     android:text="@string/potencia" />
                 <Button
@@ -190,7 +190,7 @@
                     android:textSize="25sp"
                     android:layout_weight="1"
                     android:onClick="onClick"
-                    android:background="@color/white"
+                    android:background="@color/backOp"
                     android:textColor="@color/operadores"
                     android:text="@string/porcentage" />
 
@@ -240,7 +240,7 @@
                     android:textSize="25sp"
                     android:layout_weight="1"
                     android:onClick="onClick"
-                    android:background="@color/white"
+                    android:background="@color/backOp"
                     android:textColor="@color/operadores"
                     android:text="@string/factorial" />
 
@@ -251,7 +251,7 @@
                     android:textSize="25sp"
                     android:layout_weight="1"
                     android:onClick="onClick"
-                    android:background="@color/white"
+                    android:background="@color/backOp"
                     android:textColor="@color/operadores"
                     android:text="@string/raiz" />
             </LinearLayout>
@@ -271,7 +271,7 @@
                     android:textSize="18sp"
                     android:layout_weight="1"
                     android:onClick="onClick"
-                    android:background="@color/white"
+                    android:background="@color/backOp"
                     android:text="@string/recuperar"/>
                 <Button
                     android:id="@+id/btn_menosDec"
@@ -280,7 +280,7 @@
                     android:textSize="18sp"
                     android:layout_weight="1"
                     android:onClick="onClick"
-                    android:background="@color/white"
+                    android:background="@color/backOp"
                     android:textColor="@color/operadores"
                     android:text="@string/menosDes" />
 
@@ -291,7 +291,7 @@
                     android:textSize="18sp"
                     android:layout_weight="1"
                     android:onClick="onClick"
-                    android:background="@color/white"
+                    android:background="@color/backOp"
                     android:textColor="@color/operadores"
                     android:text="@string/masDes" />
 

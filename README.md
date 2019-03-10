@@ -8,6 +8,9 @@ En este repositorio se encuentran las aplicaciones desarrolladas en la materia d
 ## Prácticas
 * Acceso
 * Calculadora
+* Demo Layout
 * Hola Mundo
-* PruebaDebug
-* ValueStrings
+* Mult Layout
+* Navegación
+* Prueba Debug
+* Value Strings
