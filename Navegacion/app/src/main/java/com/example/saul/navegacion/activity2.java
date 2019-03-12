@@ -12,8 +12,15 @@ public class activity2 extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity2);
-        String nombre = getIntent().getExtras().getString("nombre");
-        Toast.makeText(this, nombre, Toast.LENGTH_LONG).show();
+
+        Bundle objAlumno = getIntent().getExtras();
+        Alumno alumno= null;
+        if (objAlumno!=null){
+            alumno = (Alumno) objAlumno.getSerializable("alumno");
+        }
+        //String nombre = getIntent().getExtras().getString("nombre");
+        String datos = alumno.getApellido() + " " + alumno.getNombre();
+        Toast.makeText(this, datos, Toast.LENGTH_LONG).show();
     }
     public void activity1(View view){
         Intent intent = new Intent(this, MainActivity.class);

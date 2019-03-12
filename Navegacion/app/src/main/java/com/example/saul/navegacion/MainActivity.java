@@ -17,14 +17,13 @@ public class MainActivity extends AppCompatActivity {
     }
     public void activity2(View view){
         Intent intent = new Intent(this, activity2.class);
-        intent.putExtra("nombre", "Saul");
+        Bundle bundle = new Bundle();
+        bundle.putSerializable("alumno",alumno);
+        intent.putExtras(bundle);
+        //intent.putExtra("nombre", "Saul");
         //                              Serializable
-        intent.putExtra("nombre", alumno.getNombre());
+        //intent.putExtra("nombre", alumno.getNombre());
         startActivity(intent);
 
-
     }
-    /*public class Alumno(String nombre){
-        String name = nombre;
-    }*/
 }

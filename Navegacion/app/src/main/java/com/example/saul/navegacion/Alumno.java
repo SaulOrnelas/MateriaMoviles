@@ -1,6 +1,8 @@
 package com.example.saul.navegacion;
 
-public class Alumno {
+import java.io.Serializable;
+
+public class Alumno implements Serializable {
     String nombre;
     String apellido;
 
