@@ -14,6 +14,12 @@ public class MainActivity extends AppCompatActivity {
     private TextView txvListaPersonas;
     private ArrayList<Persona> lista_personas;
     @Override
+    /**
+     * @author Luis Saul Ornelas Pérez
+     * @version RegistroPersonas 1.3 (Viernes, 22 de Marzo)
+     * @param Bundle
+     * @return void
+     */
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
@@ -25,12 +31,27 @@ public class MainActivity extends AppCompatActivity {
         }
         this.muestra_personas();
     }
+    /**
+     * Método que sirve para abrir otra vista, agregando una lista de personas
+     * @author Luis Saul Ornelas Pérez
+     * @version RegistroPersonas 1.3 (Viernes, 22 de Marzo)
+     * @param view, vista a la cual se desea abrir
+     * @return void
+     *
+     */
     public void agregar(View view){
         Intent registro = new Intent(this,Registro.class);
         registro.putExtra("lista_personas", this.lista_personas);
         startActivity(registro);
 
     }
+
+    /**
+     * @author Luis Saul Ornelas Pérez
+     * @version RegistroPersonas 1.3 (Viernes, 22 de Marzo)
+     * @return void
+     * Método que regresa la lista de personas, la lista esta hecha con el objeto de Persona
+     */
 
     private void muestra_personas(){
         if (this.lista_personas.isEmpty()) {

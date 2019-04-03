@@ -8,6 +8,13 @@ public class Persona implements Serializable {
     private String apellidoM;
     private int edad;
 
+    /**
+     * @author Luis Saul Ornelas Pérez
+     * @version RegistroPersonas 1.3 (Viernes, 22 de Marzo)
+     * @param Persona(String, String, String int)
+     * @return getNombre(), setNombre(String), getApellido(), setApellidoP(String), getApellidoM(),
+     * setApellidoM(String), getEdad(), setEdad(int)
+     */
     public Persona(String nombre, String apellidoP, String apellidoM, int edad) {
         this.nombre = nombre;
         this.apellidoP = apellidoP;
@@ -15,6 +22,12 @@ public class Persona implements Serializable {
         this.edad = edad;
     }
 
+    /**
+     * @author Luis Saul Ornelas Pérez
+     * @version RegistroPersonas 1.3 (Viernes, 22 de Marzo)
+     * @return getNombre(), setNombre(String), getApellido(), setApellidoP(String), getApellidoM(),
+     * setApellidoM(String), getEdad(), setEdad(int)
+     */
     public String getNombre() {
         return nombre;
     }
