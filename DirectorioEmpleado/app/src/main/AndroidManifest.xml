@@ -17,7 +17,8 @@
             </intent-filter>
         </activity>
         <activity android:name=".InfoPersonal" />
-        <activity android:name=".AgregarEmpleado"></activity>
+        <activity android:name=".AgregarEmpleado" />
+        <activity android:name=".InfoLaboral"></activity>
     </application>
 
 </manifest>
