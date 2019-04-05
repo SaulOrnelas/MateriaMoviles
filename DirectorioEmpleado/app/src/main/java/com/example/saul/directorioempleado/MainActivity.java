@@ -45,7 +45,8 @@ public class MainActivity extends AppCompatActivity {
 
     }
     public void agregar (View view){
-        Intent intent = new Intent(this, InfoPersonal.class);
+        Intent intent = new Intent(this, DatosEmpleado.class);
+        //Intent intent = new Intent(this, InfoPersonal.class);
         startActivity(intent);
     }
 }

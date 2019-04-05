@@ -18,7 +18,8 @@
         </activity>
         <activity android:name=".InfoPersonal" />
         <activity android:name=".AgregarEmpleado" />
-        <activity android:name=".InfoLaboral"></activity>
+        <activity android:name=".InfoLaboral" />
+        <activity android:name=".DatosEmpleado"></activity>
     </application>
 
 </manifest>
