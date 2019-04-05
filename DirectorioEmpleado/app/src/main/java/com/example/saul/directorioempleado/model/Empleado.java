@@ -46,6 +46,12 @@ public class Empleado {
         this.status = status;
     }
 
+    public Empleado(int id, String nombre, String apellido) {
+        this.id = id;
+        this.nombre = nombre;
+        this.apellido = apellido;
+    }
+
     public int getId() {
         return id;
     }
