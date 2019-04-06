@@ -26,7 +26,6 @@ public class MainActivity extends AppCompatActivity {
 
         btn_agregar = (Button) findViewById(R.id.btn_agregar);
 
-
         List<Empleado> empleados = new ArrayList<>();
 
         empleados.add(new Empleado(1, "Saul", "Ornelas"));

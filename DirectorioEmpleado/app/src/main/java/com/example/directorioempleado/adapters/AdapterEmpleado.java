@@ -71,7 +71,6 @@ public class AdapterEmpleado extends RecyclerView.Adapter<AdapterEmpleado.RVEmpl
         return empleados.size();
     }
 
-    //Todavia no esta listo
     public class RVEmpleadoAdapterViewHolder extends RecyclerView.ViewHolder {
         TextView txv_rvid;
         TextView txv_rvnombre;
