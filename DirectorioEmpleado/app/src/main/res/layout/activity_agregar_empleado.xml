@@ -14,23 +14,6 @@
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:orientation="vertical">
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:orientation="horizontal">
-
-                <TextView
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="2"
-                    android:text="Id"/>
-                <EditText
-                    android:id="@+id/edt_id"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="1"/>
-
-            </LinearLayout>
 
             <LinearLayout
                 android:layout_width="match_parent"
@@ -43,7 +26,7 @@
                     android:layout_weight="2"
                     android:text="Nombre"/>
                 <EditText
-                    android:id="@+id/edt_nombre"
+                    android:id="@+id/edt_add_nombre"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"/>
@@ -61,7 +44,7 @@
                     android:layout_weight="2"
                     android:text="Apellido"/>
                 <EditText
-                    android:id="@+id/edt_apellido"
+                    android:id="@+id/edt_add_apellido"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"/>
@@ -79,7 +62,7 @@
                     android:layout_weight="2"
                     android:text="Fecha nacimiento"/>
                 <EditText
-                    android:id="@+id/edt_nacimiento"
+                    android:id="@+id/edt_add_nacimiento"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"/>
@@ -98,7 +81,7 @@
                     android:text="Area" />
 
                 <EditText
-                    android:id="@+id/edt_area"
+                    android:id="@+id/edt_add_area"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_weight="1" />
@@ -116,7 +99,7 @@
                     android:layout_weight="2"
                     android:text="Teléfono"/>
                 <EditText
-                    android:id="@+id/edt_telefono"
+                    android:id="@+id/edt_add_telefono"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"/>
@@ -133,7 +116,7 @@
                     android:layout_weight="2"
                     android:text="Correo"/>
                 <EditText
-                    android:id="@+id/edt_correo"
+                    android:id="@+id/edt_add_correo"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"/>
@@ -150,7 +133,7 @@
                     android:layout_weight="2"
                     android:text="Dirección"/>
                 <EditText
-                    android:id="@+id/edt_direccion"
+                    android:id="@+id/edt_add_direccion"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"/>
@@ -168,7 +151,7 @@
                     android:layout_weight="2"
                     android:text="Nomina"/>
                 <EditText
-                    android:id="@+id/edt_nomina"
+                    android:id="@+id/edt_add_nomina"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"/>
@@ -186,7 +169,7 @@
                     android:layout_weight="2"
                     android:text="Puesto"/>
                 <EditText
-                    android:id="@+id/edt_puesto"
+                    android:id="@+id/edt_add_puesto"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"/>
@@ -204,7 +187,7 @@
                     android:layout_weight="2"
                     android:text="Estado civil"/>
                 <EditText
-                    android:id="@+id/edt_estado_civil"
+                    android:id="@+id/edt_add_estado_civil"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"/>
@@ -222,7 +205,7 @@
                     android:layout_weight="2"
                     android:text="Curp"/>
                 <EditText
-                    android:id="@+id/edt_curp"
+                    android:id="@+id/edt_add_curp"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"/>
@@ -240,7 +223,7 @@
                     android:layout_weight="2"
                     android:text="NSS"/>
                 <EditText
-                    android:id="@+id/edt_nss"
+                    android:id="@+id/edt_add_nss"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"/>
@@ -258,7 +241,7 @@
                     android:layout_weight="2"
                     android:text="Crónicas"/>
                 <EditText
-                    android:id="@+id/edt_cronicas"
+                    android:id="@+id/edt_add_cronicas"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"/>
@@ -276,7 +259,7 @@
                     android:layout_weight="2"
                     android:text="Cont emergencia"/>
                 <EditText
-                    android:id="@+id/edt_contacto_emergencia"
+                    android:id="@+id/edt_add_contacto_emergencia"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"/>
@@ -294,7 +277,7 @@
                     android:layout_weight="2"
                     android:text="Escolaridad"/>
                 <EditText
-                    android:id="@+id/edt_escolaridad"
+                    android:id="@+id/edt_add_escolaridad"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"/>
@@ -312,7 +295,7 @@
                     android:layout_weight="2"
                     android:text="Nacionalidad"/>
                 <EditText
-                    android:id="@+id/edt_nacionalidad"
+                    android:id="@+id/edt_add_nacionalidad"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"/>
@@ -328,9 +311,9 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_weight="2"
-                    android:text="Estatus"/>
+                    android:text="Status"/>
                 <EditText
-                    android:id="@+id/edt_estatus"
+                    android:id="@+id/edt_add_status"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"/>
@@ -346,6 +329,7 @@
                     android:id="@+id/btn_agregar"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
+                    android:onClick="agregar"
                     android:text="Agregar"/>
 
             </LinearLayout>

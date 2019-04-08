@@ -13,23 +13,35 @@
         android:orientation="horizontal"
         android:layout_marginBottom="10sp">
 
-        <Button
+        <ImageButton
+            android:id="@+id/btn_recargar"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:layout_weight="3"/>
+            android:layout_weight="4"
+            android:onClick="recargar"
+            app:srcCompat="@drawable/ic_autorenew_black_24dp" />
+
+        <ImageButton
+            android:id="@+id/btn_buscar"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_weight="4"
+            android:onClick="buscar"
+            app:srcCompat="@drawable/ic_search_black_24dp" />
 
         <EditText
+            android:id="@+id/edt_buscar"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:layout_weight="2"
-            />
+            android:hint="Nombre"
+            android:layout_weight="3"/>
 
         <Button
-            android:id="@+id/btn_agregar"
+            android:id="@+id/btn_agregar_empleado"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:layout_weight="2"
-            android:onClick="agregar"
+            android:layout_weight="3"
+            android:onClick="agregarEmpleado"
             android:text="Agregar"/>
     </LinearLayout>
 

@@ -3,6 +3,8 @@ package com.example.directorioempleado.adapters;
 import android.app.AlertDialog;
 import android.content.Context;
 import android.content.DialogInterface;
+import android.content.Intent;
+import android.os.Bundle;
 import android.support.annotation.NonNull;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
@@ -10,6 +12,8 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
 
+import com.example.directorioempleado.DatosEmpleado;
+import com.example.directorioempleado.MainActivity;
 import com.example.directorioempleado.R;
 import com.example.directorioempleado.model.Empleado;
 
@@ -50,7 +54,7 @@ public class AdapterEmpleado extends RecyclerView.Adapter<AdapterEmpleado.RVEmpl
         rvEmpleadoAdapterViewHolder.itemView.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                AlertDialog.Builder alertDialog = new AlertDialog.Builder(context);
+                /*AlertDialog.Builder alertDialog = new AlertDialog.Builder(context);
                 alertDialog.setTitle(empleado.getNombre());
                 alertDialog.setMessage(empleado.getApellido());
 
@@ -61,13 +65,18 @@ public class AdapterEmpleado extends RecyclerView.Adapter<AdapterEmpleado.RVEmpl
                     }
                 });
 
-                alertDialog.show();
+                alertDialog.show();*/
+
+                final Intent intent = new Intent(context, DatosEmpleado.class);
+                intent.putExtra("id",empleado.getId());
+                context.startActivity(intent);
             }
         });
     }
 
     @Override
     public int getItemCount() {
+
         return empleados.size();
     }
 

@@ -7,8 +7,10 @@ import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.view.View;
 import android.widget.Button;
+import android.widget.EditText;
 
 import com.example.directorioempleado.adapters.AdapterEmpleado;
+import com.example.directorioempleado.dao.DAOEmpleado;
 import com.example.directorioempleado.model.Empleado;
 
 import java.util.ArrayList;
@@ -18,17 +20,24 @@ public class MainActivity extends AppCompatActivity {
 
     private RecyclerView recyclerView;
     private AdapterEmpleado adapter;
-    private Button btn_agregar;
+    private EditText edt_buscar;
+    ArrayList<Empleado> empleados;
+    DAOEmpleado dao;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        btn_agregar = (Button) findViewById(R.id.btn_agregar);
+        dao= new DAOEmpleado(MainActivity.this);
+        edt_buscar = (EditText) findViewById(R.id.edt_buscar);
 
-        List<Empleado> empleados = new ArrayList<>();
+        //ArrayList<Empleado> empleados = new ArrayList<Empleado>();
 
-        empleados.add(new Empleado(1, "Saul", "Ornelas"));
+        empleados = dao.verTodos();
+
+        //empleados.add(new Empleado(4, "Saul", "Ornelas"));
+        //empleados.add(new Empleado(1, "Luis", "Ornelas"));
+        //empleados.add(new Empleado(2, "Saul", "Ornelas"));
 
         recyclerView = (RecyclerView) findViewById(R.id.rv_lista_empleado);
 
@@ -40,9 +49,41 @@ public class MainActivity extends AppCompatActivity {
                 LinearLayoutManager.VERTICAL,
                 false));
     }
-    public void agregar (View view){
-        Intent intent = new Intent(this, DatosEmpleado.class);
+    public void agregarEmpleado (View view){
+        Intent intent = new Intent(this, AgregarEmpleado.class);
         //Intent intent = new Intent(this, InfoPersonal.class);
         startActivity(intent);
+    }
+    public void buscar (View view){
+        recyclerView.removeAllViewsInLayout();
+
+        empleados = dao.buscar(edt_buscar.getText().toString());
+
+        recyclerView = (RecyclerView) findViewById(R.id.rv_lista_empleado);
+
+        adapter = new AdapterEmpleado(this,empleados);
+
+        recyclerView.setAdapter(adapter);
+
+        recyclerView.setLayoutManager(new LinearLayoutManager(this,
+                LinearLayoutManager.VERTICAL,
+                false));
+    }
+
+    public void recargar (View view){
+
+        recyclerView.removeAllViewsInLayout();
+
+        empleados = dao.verTodos();
+
+        recyclerView = (RecyclerView) findViewById(R.id.rv_lista_empleado);
+
+        adapter = new AdapterEmpleado(this,empleados);
+
+        recyclerView.setAdapter(adapter);
+
+        recyclerView.setLayoutManager(new LinearLayoutManager(this,
+                LinearLayoutManager.VERTICAL,
+                false));
     }
 }

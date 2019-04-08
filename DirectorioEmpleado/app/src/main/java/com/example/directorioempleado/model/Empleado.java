@@ -1,6 +1,8 @@
 package com.example.directorioempleado.model;
 
-public class Empleado {
+import java.io.Serializable;
+
+public class Empleado implements Serializable {
     private int id;
     private String nombre;
     private String apellido;
@@ -21,6 +23,32 @@ public class Empleado {
     private String nacionalidad;
     private String status;
 
+    //Constructor para agregar
+    public Empleado(String nombre, String apellido, String nacimiento, String telefono, String correo,
+                    String direccion, int numNomnina, String area, String puesto, String estadoCivil,
+                    String curp, String nss, String cronicas, String contEmergencia, String rutaFoto,
+                    String escolaridad, String nacionalidad, String status) {
+        this.nombre = nombre;
+        this.apellido = apellido;
+        this.nacimiento = nacimiento;
+        this.telefono = telefono;
+        this.correo = correo;
+        this.direccion = direccion;
+        this.numNomnina = numNomnina;
+        this.area = area;
+        this.puesto = puesto;
+        this.estadoCivil = estadoCivil;
+        this.curp = curp;
+        this.nss = nss;
+        this.cronicas = cronicas;
+        this.contEmergencia = contEmergencia;
+        this.rutaFoto = rutaFoto;
+        this.escolaridad = escolaridad;
+        this.nacionalidad = nacionalidad;
+        this.status = status;
+    }
+
+    //Constructor para editar empleado
     public Empleado(int id, String nombre, String apellido, String nacimiento, String telefono,
                     String correo, String direccion, int numNomnina, String area, String puesto,
                     String estadoCivil, String curp, String nss, String cronicas, String contEmergencia,
@@ -46,10 +74,41 @@ public class Empleado {
         this.status = status;
     }
 
+    //Constructor para obtener los empleados y mostrarlos en el RecyclerView
     public Empleado(int id, String nombre, String apellido) {
         this.id = id;
         this.nombre = nombre;
         this.apellido = apellido;
+    }
+
+    //Constructor para mostrar los datos personales del empleado
+    public Empleado(int id, String nombre, String apellido, String nacimiento, String telefono, String correo, String direccion, String estadoCivil, String cronicas, String rutaFoto, String nacionalidad) {
+        this.id = id;
+        this.nombre = nombre;
+        this.apellido = apellido;
+        this.nacimiento = nacimiento;
+        this.telefono = telefono;
+        this.correo = correo;
+        this.direccion = direccion;
+        this.estadoCivil = estadoCivil;
+        this.cronicas = cronicas;
+        this.rutaFoto = rutaFoto;
+        this.nacionalidad = nacionalidad;
+    }
+
+    //Constructor para mostrar los datos laborales del empleado
+    public Empleado(int id, String nombre, String apellido, int numNomnina, String area, String puesto, String curp, String nss, String contEmergencia, String escolaridad, String status) {
+        this.id = id;
+        this.nombre = nombre;
+        this.apellido = apellido;
+        this.numNomnina = numNomnina;
+        this.area = area;
+        this.puesto = puesto;
+        this.curp = curp;
+        this.nss = nss;
+        this.contEmergencia = contEmergencia;
+        this.escolaridad = escolaridad;
+        this.status = status;
     }
 
     public int getId() {
