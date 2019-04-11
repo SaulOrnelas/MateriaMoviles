@@ -7,6 +7,7 @@ import android.content.DialogInterface;
 import android.content.Intent;
 import android.content.pm.PackageManager;
 import android.graphics.Bitmap;
+import android.graphics.BitmapFactory;
 import android.net.Uri;
 import android.os.Bundle;
 import android.os.Environment;
@@ -70,6 +71,7 @@ public class FragEditar extends Fragment {
     private EditText edt_edit_status;
     private Button btn_galeriaMod;
     private Button btn_editar;
+    private Button btn_eliminar;
 
     public FragEditar() {
         // Required empty public constructor
@@ -112,6 +114,7 @@ public class FragEditar extends Fragment {
         edt_edit_status = (EditText) view.findViewById(R.id.edt_edit_status);
         btn_galeriaMod = (Button) view.findViewById(R.id.btn_galeriaMod);
         btn_editar = (Button) view.findViewById(R.id.btn_editar);
+        btn_eliminar = (Button) view.findViewById(R.id.btn_eliminar);
 
         Empleado empleado = dao.obtenerEmpleado(id);
 
@@ -130,6 +133,9 @@ public class FragEditar extends Fragment {
         edt_edit_nss.setText(empleado.getNss());
         edt_edit_cronicas.setText(empleado.getCronicas());
         edt_edit_contacto_emergencia.setText(empleado.getContEmergencia());
+        byte[] imagen = empleado.getRutaFoto();
+        Bitmap bmp = BitmapFactory.decodeByteArray(imagen,0, imagen.length);
+        imgv_modificar.setImageBitmap(bmp);
         edt_edit_escolaridad.setText(empleado.getEscolaridad());
         edt_edit_nacionalidad.setText(empleado.getNacionalidad());
         edt_edit_status.setText(empleado.getStatus());
@@ -170,14 +176,40 @@ public class FragEditar extends Fragment {
 
                     Toast.makeText(getActivity().getApplicationContext(),"Actualización correcta",Toast.LENGTH_SHORT).show();
 
-
-
                 }catch (Exception e){
                     e.printStackTrace();
                     Toast.makeText(getActivity().getApplicationContext(),"Error al actualizar",Toast.LENGTH_SHORT).show();
                 }
             }
         });
+
+        btn_eliminar.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                dao.eliminar(Integer.parseInt(edt_edit_id.getText().toString()));
+                Toast.makeText(getActivity().getApplicationContext(),"Empleado eliminado correctamente",Toast.LENGTH_SHORT).show();
+                Intent intent = new Intent(getActivity().getApplicationContext(), MainActivity.class);
+                //Intent intent = new Intent(this, InfoPersonal.class);
+                startActivity(intent);
+                /*
+                AlertDialog.Builder eliminar = new AlertDialog.Builder(getActivity().getApplicationContext());
+                eliminar.setMessage("Estas seguro de eliminar el empleado");
+                eliminar.setCancelable(false);
+                eliminar.setPositiveButton("Si", new DialogInterface.OnClickListener() {
+                    @Override
+                    public void onClick(DialogInterface dialog, int which) {
+
+                    }
+                });
+                eliminar.setNegativeButton("No", new DialogInterface.OnClickListener() {
+                    @Override
+                    public void onClick(DialogInterface dialog, int which) {
+
+                    }
+                });*/
+            }
+        });
+
         if(ContextCompat.checkSelfPermission(getActivity().getApplicationContext(), Manifest.permission.WRITE_EXTERNAL_STORAGE) != PackageManager.PERMISSION_GRANTED && ActivityCompat.checkSelfPermission(getActivity().getApplicationContext(), Manifest.permission.CAMERA) != PackageManager.PERMISSION_GRANTED){
             ActivityCompat.requestPermissions(getActivity(), new String[]{Manifest.permission.WRITE_EXTERNAL_STORAGE, Manifest.permission.CAMERA}, 1000);
         }

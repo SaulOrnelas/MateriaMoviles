@@ -76,6 +76,10 @@ public class DAOEmpleado {
         return (cx.update("empleados",contenedor , "id="+e.getId(),null))>0;
     }
 
+    public boolean eliminar(int id){
+        return (cx.delete("empleados","id="+id,null))>0;
+    }
+
     public ArrayList<Empleado> verTodos() {
         //Limpiar la lista
         lista.clear();

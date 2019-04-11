@@ -5,6 +5,7 @@ import android.content.ContentValues;
 import android.content.Intent;
 import android.content.pm.PackageManager;
 import android.graphics.Bitmap;
+import android.graphics.drawable.Drawable;
 import android.net.Uri;
 import android.os.Environment;
 import android.provider.MediaStore;
@@ -115,9 +116,27 @@ public class AgregarEmpleado extends AppCompatActivity {
                     edt_add_escolaridad.getText().toString(),
                     edt_add_nacionalidad.getText().toString(),
                     edt_add_status.getText().toString());
-            dao.insertar(empleado);
-
-
+            if(dao.insertar(empleado)){
+                edt_add_nombre.setText("");
+                edt_add_apellido.setText("");
+                edt_add_nacimiento.setText("");
+                edt_add_telefono.setText("");
+                edt_add_correo.setText("");
+                edt_add_direccion.setText("");
+                edt_add_nomina.setText("");
+                edt_add_area.setText("");
+                edt_add_puesto.setText("");
+                edt_add_estado_civil.setText("");
+                edt_add_curp.setText("");
+                edt_add_nss.setText("");
+                edt_add_cronicas.setText("");
+                edt_add_contacto_emergencia.setText("");
+                imgv_agregar.setImageResource(R.drawable.previo);
+                edt_add_escolaridad.setText("");
+                edt_add_nacionalidad.setText("");
+                edt_add_status.setText("");
+                Toast.makeText(this,"Empleado agregado correctamente",Toast.LENGTH_SHORT).show();
+            }
         }catch (Exception e){
             e.printStackTrace();
             Toast.makeText(getApplication(),"Error", Toast.LENGTH_SHORT).show();
@@ -195,7 +214,6 @@ public class AgregarEmpleado extends AppCompatActivity {
         //FileInputStream fis = new FileInputStream("/storage/emulated/0/Pictures/empleados/empleado1.jpg");
         //byte[] image = new byte[fis.available()];
         //fis.read(image);
-
 
     }
 
