@@ -5,6 +5,7 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
+import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
@@ -55,9 +56,9 @@ public class MainActivity extends AppCompatActivity {
         startActivity(intent);
     }
     public void buscar (View view){
-        recyclerView.removeAllViewsInLayout();
-
         empleados = dao.buscar(edt_buscar.getText().toString());
+
+        //Log.e("Empleados", "" +empleados.size());
 
         recyclerView = (RecyclerView) findViewById(R.id.rv_lista_empleado);
 
@@ -71,9 +72,6 @@ public class MainActivity extends AppCompatActivity {
     }
 
     public void recargar (View view){
-
-        recyclerView.removeAllViewsInLayout();
-
         empleados = dao.verTodos();
 
         recyclerView = (RecyclerView) findViewById(R.id.rv_lista_empleado);

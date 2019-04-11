@@ -1,18 +1,23 @@
 package com.example.directorioempleado;
 
 import android.content.Context;
+import android.graphics.Bitmap;
+import android.graphics.BitmapFactory;
+import android.graphics.drawable.Drawable;
 import android.net.Uri;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
 
 import com.example.directorioempleado.dao.DAOEmpleado;
 import com.example.directorioempleado.model.Empleado;
 
+import java.net.URI;
 import java.util.ArrayList;
 
 public class FragInfoPersonal extends Fragment {
@@ -30,7 +35,7 @@ public class FragInfoPersonal extends Fragment {
     private TextView txv_direccion;
     private TextView txv_estado_civil;
     private TextView txv_cronicas;
-    //Ruta foto
+    private ImageView imgv_perfil;
     private TextView txv_nacionalidad;
 
 
@@ -65,6 +70,7 @@ public class FragInfoPersonal extends Fragment {
         txv_direccion = (TextView) view.findViewById(R.id.txv_direccion);
         txv_estado_civil = (TextView) view.findViewById(R.id.txv_estado_civil);
         txv_cronicas = (TextView) view.findViewById(R.id.txv_cronicas);
+        imgv_perfil = (ImageView) view.findViewById(R.id.imgv_perfil);
         txv_nacionalidad = (TextView) view.findViewById(R.id.txv_nacionalidad);
 
         Empleado empleado = dao.obtenerDatosPersonales(id);
@@ -78,6 +84,12 @@ public class FragInfoPersonal extends Fragment {
         txv_direccion.setText(empleado.getDireccion());
         txv_estado_civil.setText(empleado.getEstadoCivil());
         txv_cronicas.setText(empleado.getCronicas());
+        byte[] imagen = empleado.getRutaFoto();
+        Bitmap bmp = BitmapFactory.decodeByteArray(imagen,0, imagen.length);
+
+        //String pathName = empleado.getRutaFoto();
+        //Drawable image = Drawable.createFromPath(pathName);
+        imgv_perfil.setImageBitmap(bmp);
         txv_nacionalidad.setText(empleado.getNacionalidad());
         return view;
 

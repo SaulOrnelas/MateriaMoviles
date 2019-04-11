@@ -16,10 +16,10 @@ public class DAOEmpleado {
     Empleado empleado;
     Context context;
     String nombreBD = "BDEmpledo";
-    String tabla = "create table if not exists empleado(id integer primary key autoincrement, nombre text, " +
+    String tabla = "create table if not exists empleados(id integer primary key autoincrement, nombre text, " +
             "apellido text, nacimiento text, telefono text, correo text, direccion text, numNomina integer, " +
             "area text, puesto text, estadoCivil text, curp text, nss text, cronicas text, " +
-            "contEmergencia text, rutaFoto text, escolaridad text, nacionalidad text, status text)";
+            "contEmergencia text, rutaFoto blob, escolaridad text, nacionalidad text, status text)";
 
     public DAOEmpleado(Context context){
         this.context = context;
@@ -48,12 +48,8 @@ public class DAOEmpleado {
         contenedor.put("nacionalidad", e.getNacionalidad());
         contenedor.put("status", e.getStatus());
 
-        return (cx.insert("empleado",null , contenedor))>0;
+        return (cx.insert("empleados",null , contenedor))>0;
 
-    }
-
-    public boolean eliminar(int id){
-        return true;
     }
 
     public boolean editar(Empleado e){
@@ -77,11 +73,13 @@ public class DAOEmpleado {
         contenedor.put("nacionalidad", e.getNacionalidad());
         contenedor.put("status", e.getStatus());
 
-        return (cx.update("empleado",contenedor , "id="+e.getId(),null))>0;
+        return (cx.update("empleados",contenedor , "id="+e.getId(),null))>0;
     }
 
     public ArrayList<Empleado> verTodos() {
-        Cursor cursor = cx.rawQuery("select id, nombre, apellido from empleado", null);
+        //Limpiar la lista
+        lista.clear();
+        Cursor cursor = cx.rawQuery("select id, nombre, apellido from empleados", null);
         if(cursor != null && cursor.getCount()>0){
             cursor.moveToFirst();
             do{
@@ -94,7 +92,9 @@ public class DAOEmpleado {
     }
 
     public ArrayList<Empleado> buscar(String nombre) {
-        Cursor cursor = cx.rawQuery("select id, nombre, apellido from empleado where nombre like '%"+nombre+"%'", null);
+        //Limpiar la lista
+        lista.clear();
+        Cursor cursor = cx.rawQuery("select id, nombre, apellido from empleados where nombre like '%"+nombre+"%'", null);
         if(cursor != null && cursor.getCount()>0){
             cursor.moveToFirst();
             do{
@@ -107,7 +107,7 @@ public class DAOEmpleado {
     }
 
     public Empleado obtenerEmpleado(int id){
-        Cursor cursor = cx.rawQuery("select * from empleado where id = "+id, null);
+        Cursor cursor = cx.rawQuery("select * from empleados where id = "+id, null);
         cursor.moveToFirst();
         empleado = new Empleado(cursor.getInt(0),
                 cursor.getString(1),
@@ -124,7 +124,7 @@ public class DAOEmpleado {
                 cursor.getString(12),
                 cursor.getString(13),
                 cursor.getString(14),
-                cursor.getString(15),
+                cursor.getBlob(15),
                 cursor.getString(16),
                 cursor.getString(17),
                 cursor.getString(18));
@@ -134,7 +134,7 @@ public class DAOEmpleado {
     public Empleado obtenerDatosPersonales(int id){
 
         Cursor cursor = cx.rawQuery("select id, nombre, apellido, nacimiento, telefono, correo, " +
-                "direccion, estadoCivil, cronicas, rutaFoto, nacionalidad from empleado where id = "+ id, null);
+                "direccion, estadoCivil, cronicas, rutaFoto, nacionalidad from empleados where id = "+ id, null);
         cursor.moveToFirst();
         empleado = new Empleado(cursor.getInt(0),
                 cursor.getString(1),
@@ -145,7 +145,7 @@ public class DAOEmpleado {
                 cursor.getString(6),
                 cursor.getString(7),
                 cursor.getString(8),
-                cursor.getString(9),
+                cursor.getBlob(9),
                 cursor.getString(10));
 
         return empleado;
@@ -153,7 +153,7 @@ public class DAOEmpleado {
 
     public Empleado obtenerDatosLaborales(int id) {
         Cursor cursor = cx.rawQuery("select id, nombre, apellido, numNomina, area, puesto, curp, " +
-                "nss, contEmergencia, escolaridad, status from empleado where id = "+ id, null);
+                "nss, contEmergencia, escolaridad, status from empleados where id = "+ id, null);
         cursor.moveToFirst();
         empleado = new Empleado(cursor.getInt(0),
                 cursor.getString(1),
@@ -169,6 +169,5 @@ public class DAOEmpleado {
 
         return empleado;
     }
-
 
 }

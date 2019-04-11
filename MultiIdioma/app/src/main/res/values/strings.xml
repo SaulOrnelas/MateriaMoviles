@@ -1,0 +1,9 @@
+<resources>
+    <string name="app_name">MultiIdioma</string>
+    <string name="infoPersonal">Información personal</string>
+    <string name="nombre">Nombre</string>
+    <string name="apellido">Apellido</string>
+    <string name="edad">Edad</string>
+    <string name="transporte">Transporte usado</string>
+
+</resources>

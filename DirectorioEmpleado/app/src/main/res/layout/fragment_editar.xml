@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
@@ -9,11 +10,60 @@
     <ScrollView
         android:layout_width="match_parent"
         android:layout_height="match_parent">
+
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:padding="20sp"
-            android:orientation="vertical">
+            android:orientation="vertical"
+            android:padding="20sp">
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginVertical="20sp"
+                android:orientation="horizontal">
+
+                <ImageView
+                    android:id="@+id/imgv_modificar"
+                    android:layout_width="175dp"
+                    android:layout_height="150dp"
+                    android:layout_alignParentStart="true"
+                    android:layout_alignParentLeft="true"
+                    android:layout_alignParentTop="true"
+                    android:layout_alignParentEnd="true"
+                    android:layout_alignParentRight="true"
+                    android:layout_marginVertical="20sp"
+                    android:layout_marginStart="25dp"
+                    android:layout_marginLeft="25dp"
+                    android:layout_marginTop="15dp"
+                    android:layout_marginEnd="161dp"
+                    android:layout_marginRight="161dp"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintHorizontal_bias="0.554"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:srcCompat="@drawable/previo" />
+
+
+                <Button
+                    android:id="@+id/btn_galeriaMod"
+                    android:layout_width="85dp"
+                    android:layout_height="60dp"
+                    android:layout_alignParentTop="true"
+                    android:layout_alignParentEnd="true"
+                    android:layout_alignParentRight="true"
+                    android:layout_marginStart="8dp"
+                    android:layout_marginLeft="8dp"
+                    android:layout_marginTop="81dp"
+                    android:layout_marginEnd="51dp"
+                    android:layout_marginRight="51dp"
+                    android:text="Cargar Imagen"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintHorizontal_bias="0.632"
+                    tools:layout_editor_absoluteY="397dp" />
+
+            </RelativeLayout>
+
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
@@ -23,15 +73,16 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_weight="2"
-                    android:textSize="18sp"
+                    android:text="Id"
                     android:textColor="@color/black"
-                    android:text="Id"/>
+                    android:textSize="18sp" />
+
                 <EditText
                     android:id="@+id/edt_edit_id"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:focusable="false"
-                    android:layout_weight="1"/>
+                    android:layout_weight="1"
+                    android:focusable="false" />
 
             </LinearLayout>
 
@@ -44,14 +95,15 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_weight="2"
-                    android:textSize="18sp"
+                    android:text="Nombre"
                     android:textColor="@color/black"
-                    android:text="Nombre"/>
+                    android:textSize="18sp" />
+
                 <EditText
                     android:id="@+id/edt_edit_nombre"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_weight="1"/>
+                    android:layout_weight="1" />
 
             </LinearLayout>
 
@@ -64,14 +116,15 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_weight="2"
-                    android:textSize="18sp"
+                    android:text="Apellido"
                     android:textColor="@color/black"
-                    android:text="Apellido"/>
+                    android:textSize="18sp" />
+
                 <EditText
                     android:id="@+id/edt_edit_apellido"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_weight="1"/>
+                    android:layout_weight="1" />
 
             </LinearLayout>
 
@@ -84,14 +137,15 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_weight="2"
-                    android:textSize="18sp"
+                    android:text="Fec nacimiento"
                     android:textColor="@color/black"
-                    android:text="Fec nacimiento"/>
+                    android:textSize="18sp" />
+
                 <EditText
                     android:id="@+id/edt_edit_nacimiento"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_weight="1"/>
+                    android:layout_weight="1" />
 
             </LinearLayout>
 
@@ -104,9 +158,9 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_weight="2"
-                    android:textSize="18sp"
+                    android:text="Area"
                     android:textColor="@color/black"
-                    android:text="Area" />
+                    android:textSize="18sp" />
 
                 <EditText
                     android:id="@+id/edt_edit_area"
@@ -125,16 +179,18 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_weight="2"
-                    android:textSize="18sp"
+                    android:text="Teléfono"
                     android:textColor="@color/black"
-                    android:text="Teléfono"/>
+                    android:textSize="18sp" />
+
                 <EditText
                     android:id="@+id/edt_edit_telefono"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_weight="1"/>
+                    android:layout_weight="1" />
 
             </LinearLayout>
+
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
@@ -144,16 +200,18 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_weight="2"
-                    android:textSize="18sp"
+                    android:text="Correo"
                     android:textColor="@color/black"
-                    android:text="Correo"/>
+                    android:textSize="18sp" />
+
                 <EditText
                     android:id="@+id/edt_edit_correo"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_weight="1"/>
+                    android:layout_weight="1" />
 
             </LinearLayout>
+
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
@@ -163,14 +221,15 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_weight="2"
-                    android:textSize="18sp"
+                    android:text="Dirección"
                     android:textColor="@color/black"
-                    android:text="Dirección"/>
+                    android:textSize="18sp" />
+
                 <EditText
                     android:id="@+id/edt_edit_direccion"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_weight="1"/>
+                    android:layout_weight="1" />
 
             </LinearLayout>
 
@@ -183,14 +242,15 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_weight="2"
-                    android:textSize="18sp"
+                    android:text="Nomina"
                     android:textColor="@color/black"
-                    android:text="Nomina"/>
+                    android:textSize="18sp" />
+
                 <EditText
                     android:id="@+id/edt_edit_nomina"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_weight="1"/>
+                    android:layout_weight="1" />
 
             </LinearLayout>
 
@@ -203,14 +263,15 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_weight="2"
-                    android:textSize="18sp"
+                    android:text="Puesto"
                     android:textColor="@color/black"
-                    android:text="Puesto"/>
+                    android:textSize="18sp" />
+
                 <EditText
                     android:id="@+id/edt_edit_puesto"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_weight="1"/>
+                    android:layout_weight="1" />
 
             </LinearLayout>
 
@@ -223,14 +284,15 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_weight="2"
-                    android:textSize="18sp"
+                    android:text="Estado civil"
                     android:textColor="@color/black"
-                    android:text="Estado civil"/>
+                    android:textSize="18sp" />
+
                 <EditText
                     android:id="@+id/edt_edit_estado_civil"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_weight="1"/>
+                    android:layout_weight="1" />
 
             </LinearLayout>
 
@@ -243,14 +305,15 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_weight="2"
-                    android:textSize="18sp"
+                    android:text="Curp"
                     android:textColor="@color/black"
-                    android:text="Curp"/>
+                    android:textSize="18sp" />
+
                 <EditText
                     android:id="@+id/edt_edit_curp"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_weight="1"/>
+                    android:layout_weight="1" />
 
             </LinearLayout>
 
@@ -263,14 +326,15 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_weight="2"
-                    android:textSize="18sp"
+                    android:text="NSS"
                     android:textColor="@color/black"
-                    android:text="NSS"/>
+                    android:textSize="18sp" />
+
                 <EditText
                     android:id="@+id/edt_edit_nss"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_weight="1"/>
+                    android:layout_weight="1" />
 
             </LinearLayout>
 
@@ -283,14 +347,15 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_weight="2"
-                    android:textSize="18sp"
+                    android:text="Crónicas"
                     android:textColor="@color/black"
-                    android:text="Crónicas"/>
+                    android:textSize="18sp" />
+
                 <EditText
                     android:id="@+id/edt_edit_cronicas"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_weight="1"/>
+                    android:layout_weight="1" />
 
             </LinearLayout>
 
@@ -303,14 +368,15 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_weight="2"
-                    android:textSize="18sp"
+                    android:text="Cont emergen"
                     android:textColor="@color/black"
-                    android:text="Cont emergen"/>
+                    android:textSize="18sp" />
+
                 <EditText
                     android:id="@+id/edt_edit_contacto_emergencia"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_weight="1"/>
+                    android:layout_weight="1" />
 
             </LinearLayout>
 
@@ -323,14 +389,15 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_weight="2"
-                    android:textSize="18sp"
+                    android:text="Escolaridad"
                     android:textColor="@color/black"
-                    android:text="Escolaridad"/>
+                    android:textSize="18sp" />
+
                 <EditText
                     android:id="@+id/edt_edit_escolaridad"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_weight="1"/>
+                    android:layout_weight="1" />
 
             </LinearLayout>
 
@@ -343,14 +410,15 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_weight="2"
-                    android:textSize="18sp"
+                    android:text="Nacionalidad"
                     android:textColor="@color/black"
-                    android:text="Nacionalidad"/>
+                    android:textSize="18sp" />
+
                 <EditText
                     android:id="@+id/edt_edit_nacionalidad"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_weight="1"/>
+                    android:layout_weight="1" />
 
             </LinearLayout>
 
@@ -363,16 +431,18 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_weight="2"
-                    android:textSize="18sp"
+                    android:text="Status"
                     android:textColor="@color/black"
-                    android:text="Status"/>
+                    android:textSize="18sp" />
+
                 <EditText
                     android:id="@+id/edt_edit_status"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_weight="1"/>
+                    android:layout_weight="1" />
 
             </LinearLayout>
+
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
@@ -382,9 +452,9 @@
                     android:id="@+id/btn_editar"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:textSize="18sp"
+                    android:text="Modificar"
                     android:textColor="@color/black"
-                    android:text="Modificar"/>
+                    android:textSize="18sp" />
 
             </LinearLayout>
         </LinearLayout>

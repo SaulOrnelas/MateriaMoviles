@@ -1,20 +1,40 @@
 package com.example.directorioempleado;
 
 
+import android.Manifest;
 import android.app.AlertDialog;
 import android.content.DialogInterface;
+import android.content.Intent;
+import android.content.pm.PackageManager;
+import android.graphics.Bitmap;
+import android.net.Uri;
 import android.os.Bundle;
+import android.os.Environment;
+import android.provider.MediaStore;
+import android.support.annotation.Nullable;
+import android.support.v4.app.ActivityCompat;
 import android.support.v4.app.Fragment;
+import android.support.v4.content.ContextCompat;
+import android.support.v4.content.FileProvider;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.ImageView;
 import android.widget.ListView;
 import android.widget.Toast;
 
 import com.example.directorioempleado.dao.DAOEmpleado;
 import com.example.directorioempleado.model.Empleado;
+
+import java.io.ByteArrayOutputStream;
+import java.io.File;
+import java.io.FileInputStream;
+import java.io.IOException;
+import java.text.SimpleDateFormat;
+import java.util.Date;
 
 
 /**
@@ -27,6 +47,9 @@ public class FragEditar extends Fragment {
     private DAOEmpleado dao;
     ListView opciones;
 
+    String ruta_imagen;
+    byte[] ruta;
+    private ImageView imgv_modificar;
     private EditText edt_edit_id;
     private EditText edt_edit_nombre;
     private EditText edt_edit_apellido;
@@ -45,6 +68,7 @@ public class FragEditar extends Fragment {
     private EditText edt_edit_escolaridad;
     private EditText edt_edit_nacionalidad;
     private EditText edt_edit_status;
+    private Button btn_galeriaMod;
     private Button btn_editar;
 
     public FragEditar() {
@@ -67,8 +91,7 @@ public class FragEditar extends Fragment {
         // Inflate the layout for this fragment
         view = inflater.inflate(R.layout.fragment_editar, container, false);
 
-
-
+        imgv_modificar = (ImageView) view.findViewById(R.id.imgv_modificar);
         edt_edit_id = (EditText) view.findViewById(R.id.edt_edit_id);
         edt_edit_nombre = (EditText) view.findViewById(R.id.edt_edit_nombre);
         edt_edit_apellido = (EditText) view.findViewById(R.id.edt_edit_apellido);
@@ -87,6 +110,7 @@ public class FragEditar extends Fragment {
         edt_edit_escolaridad = (EditText) view.findViewById(R.id.edt_edit_escolaridad);
         edt_edit_nacionalidad = (EditText) view.findViewById(R.id.edt_edit_nacionalidad);
         edt_edit_status = (EditText) view.findViewById(R.id.edt_edit_status);
+        btn_galeriaMod = (Button) view.findViewById(R.id.btn_galeriaMod);
         btn_editar = (Button) view.findViewById(R.id.btn_editar);
 
         Empleado empleado = dao.obtenerEmpleado(id);
@@ -110,10 +134,18 @@ public class FragEditar extends Fragment {
         edt_edit_nacionalidad.setText(empleado.getNacionalidad());
         edt_edit_status.setText(empleado.getStatus());
 
+
+        btn_galeriaMod.setOnClickListener(new View.OnClickListener(){
+            @Override
+            public void onClick(View view){
+                seleccionarImagenEditar();
+            }
+        });
         btn_editar.setOnClickListener(new View.OnClickListener(){
             @Override
             public void onClick(View view){
                 try{
+                    guardarImagen();
                     Empleado empleado = new Empleado(
                             Integer.parseInt(edt_edit_id.getText().toString()),
                             edt_edit_nombre.getText().toString(),
@@ -130,22 +162,72 @@ public class FragEditar extends Fragment {
                             edt_edit_nss.getText().toString(),
                             edt_edit_cronicas.getText().toString(),
                             edt_edit_contacto_emergencia.getText().toString(),
-                            "Ruta de foto",
+                            ruta,
                             edt_edit_escolaridad.getText().toString(),
                             edt_edit_nacionalidad.getText().toString(),
                             edt_edit_status.getText().toString());
                     dao.editar(empleado);
 
-                    Toast.makeText(getActivity().getApplicationContext(),"Actualización correcta",Toast.LENGTH_SHORT);
+                    Toast.makeText(getActivity().getApplicationContext(),"Actualización correcta",Toast.LENGTH_SHORT).show();
+
+
 
                 }catch (Exception e){
-
-                    Toast.makeText(getActivity().getApplicationContext(),"Error al actualizar",Toast.LENGTH_SHORT);
+                    e.printStackTrace();
+                    Toast.makeText(getActivity().getApplicationContext(),"Error al actualizar",Toast.LENGTH_SHORT).show();
                 }
             }
         });
+        if(ContextCompat.checkSelfPermission(getActivity().getApplicationContext(), Manifest.permission.WRITE_EXTERNAL_STORAGE) != PackageManager.PERMISSION_GRANTED && ActivityCompat.checkSelfPermission(getActivity().getApplicationContext(), Manifest.permission.CAMERA) != PackageManager.PERMISSION_GRANTED){
+            ActivityCompat.requestPermissions(getActivity(), new String[]{Manifest.permission.WRITE_EXTERNAL_STORAGE, Manifest.permission.CAMERA}, 1000);
+        }
 
         return view;
+    }
+
+    static final int REQUEST_IMAGE_CAPTURE = 1;
+    @Override
+    public void onActivityResult(int requestCode, int resultCode, @Nullable Intent data) {
+        super.onActivityResult(requestCode, resultCode, data);
+
+        if(requestCode == REQUEST_IMAGE_CAPTURE){
+            Bundle extras = data.getExtras();
+            Bitmap imageBitmap = (Bitmap) extras.get("data");
+            imgv_modificar.setImageBitmap(imageBitmap);
+        }else{
+            if(requestCode == REQUEST_SHOW_IMAGE){
+                Uri path = data.getData();
+                ruta_imagen= path.toString();
+                Log.e("Imagen",ruta_imagen);
+                //Toast.makeText(getApplicationContext(),path.toString(),Toast.LENGTH_LONG).show();
+                imgv_modificar.setImageURI(path);
+            }
+        }
+    }
+
+    static final int REQUEST_SHOW_IMAGE = 10;
+    public void seleccionarImagenEditar(){
+        Intent intent = new Intent(Intent.ACTION_PICK,
+                MediaStore.Images.Media.EXTERNAL_CONTENT_URI);
+        intent.setType("image/");
+        startActivityForResult(intent.createChooser
+                        (intent,"Seleccionar aplicación"),
+                REQUEST_SHOW_IMAGE);
+    }
+
+
+    public void guardarImagen() throws IOException {
+        ByteArrayOutputStream baos = new ByteArrayOutputStream(20480);
+        imgv_modificar.buildDrawingCache();
+        Bitmap bitmap =imgv_modificar.getDrawingCache();
+        bitmap.compress(Bitmap.CompressFormat.PNG, 0, baos);
+        byte[] blob = baos.toByteArray();
+        ruta= blob;
+        //FileInputStream fis = new FileInputStream("/document/primary:DCIM/Camera/IMG_20190408_151150.jpg");
+        //FileInputStream fis = new FileInputStream("/storage/emulated/0/Pictures/empleados/empleado1.jpg");
+        //byte[] image = new byte[fis.available()];
+        //fis.read(image);
+
     }
 
     public void editar (View view){

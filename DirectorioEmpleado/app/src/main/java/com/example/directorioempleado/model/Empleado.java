@@ -18,7 +18,8 @@ public class Empleado implements Serializable {
     private String nss;
     private String cronicas;
     private String contEmergencia;
-    private String rutaFoto;
+    //private String rutaFoto;
+    private byte[] rutaFoto;
     private String escolaridad;
     private String nacionalidad;
     private String status;
@@ -26,7 +27,7 @@ public class Empleado implements Serializable {
     //Constructor para agregar
     public Empleado(String nombre, String apellido, String nacimiento, String telefono, String correo,
                     String direccion, int numNomnina, String area, String puesto, String estadoCivil,
-                    String curp, String nss, String cronicas, String contEmergencia, String rutaFoto,
+                    String curp, String nss, String cronicas, String contEmergencia, byte[] rutaFoto,
                     String escolaridad, String nacionalidad, String status) {
         this.nombre = nombre;
         this.apellido = apellido;
@@ -52,7 +53,7 @@ public class Empleado implements Serializable {
     public Empleado(int id, String nombre, String apellido, String nacimiento, String telefono,
                     String correo, String direccion, int numNomnina, String area, String puesto,
                     String estadoCivil, String curp, String nss, String cronicas, String contEmergencia,
-                    String rutaFoto, String escolaridad, String nacionalidad, String status) {
+                    byte[] rutaFoto, String escolaridad, String nacionalidad, String status) {
         this.id = id;
         this.nombre = nombre;
         this.apellido = apellido;
@@ -82,7 +83,7 @@ public class Empleado implements Serializable {
     }
 
     //Constructor para mostrar los datos personales del empleado
-    public Empleado(int id, String nombre, String apellido, String nacimiento, String telefono, String correo, String direccion, String estadoCivil, String cronicas, String rutaFoto, String nacionalidad) {
+    public Empleado(int id, String nombre, String apellido, String nacimiento, String telefono, String correo, String direccion, String estadoCivil, String cronicas, byte[] rutaFoto, String nacionalidad) {
         this.id = id;
         this.nombre = nombre;
         this.apellido = apellido;
@@ -231,11 +232,11 @@ public class Empleado implements Serializable {
         this.contEmergencia = contEmergencia;
     }
 
-    public String getRutaFoto() {
+    public byte[] getRutaFoto() {
         return rutaFoto;
     }
 
-    public void setRutaFoto(String rutaFoto) {
+    public void setRutaFoto(byte[] rutaFoto) {
         this.rutaFoto = rutaFoto;
     }
 

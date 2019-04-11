@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">MultiIdiom</string>
+    <string name="infoPersonal">Personal information</string>
+    <string name="nombre">First name</string>
+    <string name="apellido">Last name</string>
+    <string name="edad">age</string>
+    <string name="transporte">Transport</string>
+</resources>
