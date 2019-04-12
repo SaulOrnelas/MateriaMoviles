@@ -13,31 +13,13 @@ import com.example.directorioempleado.dao.DAOEmpleado;
 
 public class DatosEmpleado extends AppCompatActivity {
 
-    private DAOEmpleado dao;
-
-    private TextView txv_id;
-    private TextView txv_nombre;
-    private TextView txv_apellido;
-    private TextView txv_nacimiento;
-    private TextView txv_telefono;
-    private TextView txv_correo;
-    private TextView txv_direccion;
-    private TextView txv_estado_civil;
-    private TextView txv_cronicas;
-    //Ruta foto
-    private TextView txv_nacionalidad;
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_datos_empleado);
 
-        txv_id = (TextView) findViewById(R.id.txv_id);
-
         Intent intent = getIntent();
         int id = intent.getIntExtra("id",1);
-
-
 
         //Recibir el id que se manda desde el adapter
         final Bundle bundle = new Bundle();
@@ -69,5 +51,9 @@ public class DatosEmpleado extends AppCompatActivity {
                 return true;
             }
         });
+        //Primer fragment que iniciara al seleccionar el empleado
+        Fragment fragmentPrincipal = new FragInfoPersonal();
+        fragmentPrincipal.setArguments(bundle);
+        getSupportFragmentManager().beginTransaction().replace(R.id.fragment_container, fragmentPrincipal).commit();
     }
 }

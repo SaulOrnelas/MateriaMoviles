@@ -54,18 +54,6 @@ public class AdapterEmpleado extends RecyclerView.Adapter<AdapterEmpleado.RVEmpl
         rvEmpleadoAdapterViewHolder.itemView.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                /*AlertDialog.Builder alertDialog = new AlertDialog.Builder(context);
-                alertDialog.setTitle(empleado.getNombre());
-                alertDialog.setMessage(empleado.getApellido());
-
-                alertDialog.setPositiveButton("Aceptar", new DialogInterface.OnClickListener() {
-                    @Override
-                    public void onClick(DialogInterface dialog, int which) {
-                        dialog.dismiss();
-                    }
-                });
-
-                alertDialog.show();*/
 
                 final Intent intent = new Intent(context, DatosEmpleado.class);
                 intent.putExtra("id",empleado.getId());
