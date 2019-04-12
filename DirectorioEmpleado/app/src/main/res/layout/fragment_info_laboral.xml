@@ -30,7 +30,7 @@
                     android:layout_marginHorizontal="10sp"
                     android:textSize="18sp"
                     android:textColor="@color/black"
-                    android:text="Id"/>
+                    android:text="@string/id"/>
                 <TextView
                     android:id="@+id/txv_laboral_id"
                     android:layout_width="match_parent"
@@ -55,7 +55,7 @@
                     android:layout_marginHorizontal="10sp"
                     android:textSize="18sp"
                     android:textColor="@color/black"
-                    android:text="Nombre"/>
+                    android:text="@string/nombre"/>
                 <TextView
                     android:id="@+id/txv_laboral_nombre"
                     android:layout_width="match_parent"
@@ -81,7 +81,7 @@
                     android:layout_marginHorizontal="10sp"
                     android:textSize="18sp"
                     android:textColor="@color/black"
-                    android:text="Apellido"/>
+                    android:text="@string/apellido"/>
                 <TextView
                     android:id="@+id/txv_laboral_apellido"
                     android:layout_width="match_parent"
@@ -107,7 +107,7 @@
                     android:layout_marginHorizontal="10sp"
                     android:textSize="18sp"
                     android:textColor="@color/black"
-                    android:text="Nomina"/>
+                    android:text="@string/nomina"/>
                 <TextView
                     android:id="@+id/txv_nomina"
                     android:layout_width="match_parent"
@@ -133,7 +133,7 @@
                     android:layout_marginHorizontal="10sp"
                     android:textSize="18sp"
                     android:textColor="@color/black"
-                    android:text="Area" />
+                    android:text="@string/area" />
 
                 <TextView
                     android:id="@+id/txv_area"
@@ -160,7 +160,7 @@
                     android:layout_marginHorizontal="10sp"
                     android:textSize="18sp"
                     android:textColor="@color/black"
-                    android:text="Puesto"/>
+                    android:text="@string/puesto"/>
                 <TextView
                     android:id="@+id/txv_puesto"
                     android:layout_width="match_parent"
@@ -186,7 +186,7 @@
                     android:layout_marginHorizontal="10sp"
                     android:textSize="18sp"
                     android:textColor="@color/black"
-                    android:text="Curp"/>
+                    android:text="@string/curp"/>
 
                 <TextView
                     android:id="@+id/txv_curp"
@@ -213,7 +213,7 @@
                     android:layout_marginHorizontal="10sp"
                     android:textSize="18sp"
                     android:textColor="@color/black"
-                    android:text="NSS"/>
+                    android:text="@string/nss"/>
                 <TextView
                     android:id="@+id/txv_nss"
                     android:layout_width="match_parent"
@@ -238,7 +238,7 @@
                     android:layout_marginHorizontal="10sp"
                     android:textSize="18sp"
                     android:textColor="@color/black"
-                    android:text="Cont emergencia"/>
+                    android:text="@string/contEmergencia"/>
                 <TextView
                     android:id="@+id/txv_contacto_emergencia"
                     android:layout_width="match_parent"
@@ -264,7 +264,7 @@
                     android:layout_marginHorizontal="10sp"
                     android:textSize="18sp"
                     android:textColor="@color/black"
-                    android:text="Escolaridad"/>
+                    android:text="@string/escolaridad"/>
                 <TextView
                     android:id="@+id/txv_escolaridad"
                     android:layout_width="match_parent"
@@ -290,7 +290,7 @@
                     android:layout_marginHorizontal="10sp"
                     android:textSize="18sp"
                     android:textColor="@color/black"
-                    android:text="Status"/>
+                    android:text="@string/status"/>
                 <TextView
                     android:id="@+id/txv_status"
                     android:layout_width="match_parent"

@@ -31,7 +31,7 @@
                 android:layout_height="wrap_content"
                 android:layout_marginLeft="20sp"
                 android:background="@color/lightgray"
-                android:text="nombre"
+                android:text="@string/nombre"
                 android:textSize="18sp"
                 android:textStyle="bold" />
 
@@ -41,7 +41,7 @@
                 android:layout_height="wrap_content"
                 android:layout_marginLeft="10sp"
                 android:background="@color/lightgray"
-                android:text="apellido"
+                android:text="@string/apellido"
                 android:textSize="18sp"
                 android:textStyle="bold"/>
 
@@ -58,7 +58,7 @@
             android:layout_marginEnd="20dp"
             android:layout_marginRight="20dp"
             android:background="@color/lightgray"
-            android:text="id"
+            android:text="@string/id"
             android:textSize="18sp"
             android:textStyle="bold" />
     </RelativeLayout>

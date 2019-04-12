@@ -91,7 +91,7 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_weight="2"
-                    android:text="Nombre" />
+                    android:text="@string/nombre"/>
 
                 <EditText
                     android:id="@+id/edt_add_nombre"
@@ -110,7 +110,7 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_weight="2"
-                    android:text="Apellido" />
+                    android:text="@string/apellido"/>
 
                 <EditText
                     android:id="@+id/edt_add_apellido"
@@ -129,7 +129,7 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_weight="2"
-                    android:text="Fecha nacimiento" />
+                    android:text="@string/nacimiento"/>
 
                 <EditText
                     android:id="@+id/edt_add_nacimiento"
@@ -149,7 +149,7 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_weight="2"
-                    android:text="Area" />
+                    android:text="@string/area" />
 
                 <EditText
                     android:id="@+id/edt_add_area"
@@ -168,7 +168,7 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_weight="2"
-                    android:text="Teléfono" />
+                    android:text="@string/telefono" />
 
                 <EditText
                     android:id="@+id/edt_add_telefono"
@@ -188,7 +188,7 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_weight="2"
-                    android:text="Correo" />
+                    android:text="@string/correo" />
 
                 <EditText
                     android:id="@+id/edt_add_correo"
@@ -208,7 +208,7 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_weight="2"
-                    android:text="Dirección" />
+                    android:text="@string/direccion" />
 
                 <EditText
                     android:id="@+id/edt_add_direccion"
@@ -227,7 +227,7 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_weight="2"
-                    android:text="Nomina" />
+                    android:text="@string/nomina" />
 
                 <EditText
                     android:id="@+id/edt_add_nomina"
@@ -247,7 +247,7 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_weight="2"
-                    android:text="Puesto" />
+                    android:text="@string/puesto" />
 
                 <EditText
                     android:id="@+id/edt_add_puesto"
@@ -266,7 +266,7 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_weight="2"
-                    android:text="Estado civil" />
+                    android:text="@string/estado_civil" />
 
                 <EditText
                     android:id="@+id/edt_add_estado_civil"
@@ -285,7 +285,7 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_weight="2"
-                    android:text="Curp" />
+                    android:text="@string/curp" />
 
                 <EditText
                     android:id="@+id/edt_add_curp"
@@ -304,7 +304,7 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_weight="2"
-                    android:text="NSS" />
+                    android:text="@string/nss" />
 
                 <EditText
                     android:id="@+id/edt_add_nss"
@@ -323,7 +323,7 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_weight="2"
-                    android:text="Crónicas" />
+                    android:text="@string/cronicas" />
 
                 <EditText
                     android:id="@+id/edt_add_cronicas"
@@ -342,7 +342,7 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_weight="2"
-                    android:text="Cont emergencia" />
+                    android:text="@string/contEmergencia" />
 
                 <EditText
                     android:id="@+id/edt_add_contacto_emergencia"
@@ -361,7 +361,7 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_weight="2"
-                    android:text="Escolaridad" />
+                    android:text="@string/escolaridad" />
 
                 <EditText
                     android:id="@+id/edt_add_escolaridad"
@@ -380,7 +380,7 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_weight="2"
-                    android:text="Nacionalidad" />
+                    android:text="@string/nacionalidad" />
 
                 <EditText
                     android:id="@+id/edt_add_nacionalidad"
@@ -399,7 +399,7 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_weight="2"
-                    android:text="Status" />
+                    android:text="@string/status" />
 
                 <EditText
                     android:id="@+id/edt_add_status"
@@ -425,7 +425,7 @@
                     android:layout_marginEnd="35dp"
                     android:layout_marginRight="35dp"
                     android:onClick="agregar"
-                    android:text="Agregar"
+                    android:text="@string/agregar"
                     android:textColor="@color/black"
                     android:textSize="18sp"/>
 

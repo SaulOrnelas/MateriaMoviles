@@ -42,7 +42,7 @@
                     android:layout_marginHorizontal="10sp"
                     android:textSize="18sp"
                     android:textColor="@color/black"
-                    android:text="Id"/>
+                    android:text="@string/id"/>
                 <TextView
                     android:id="@+id/txv_id"
                     android:layout_width="match_parent"
@@ -68,7 +68,7 @@
                     android:layout_marginHorizontal="10sp"
                     android:textSize="18sp"
                     android:textColor="@color/black"
-                    android:text="Nombre"/>
+                    android:text="@string/nombre"/>
                 <TextView
                     android:id="@+id/txv_nombre"
                     android:layout_width="match_parent"
@@ -94,7 +94,7 @@
                     android:layout_marginHorizontal="10sp"
                     android:textSize="18sp"
                     android:textColor="@color/black"
-                    android:text="Apellido"/>
+                    android:text="@string/apellido"/>
                 <TextView
                     android:id="@+id/txv_apellido"
                     android:layout_width="match_parent"
@@ -120,7 +120,7 @@
                     android:layout_marginHorizontal="10sp"
                     android:textSize="18sp"
                     android:textColor="@color/black"
-                    android:text="Fecha nacimiento"/>
+                    android:text="@string/nacimiento"/>
                 <TextView
                     android:id="@+id/txv_nacimiento"
                     android:layout_width="match_parent"
@@ -145,7 +145,7 @@
                     android:layout_marginHorizontal="10sp"
                     android:textSize="18sp"
                     android:textColor="@color/black"
-                    android:text="Teléfono"/>
+                    android:text="@string/telefono"/>
                 <TextView
                     android:id="@+id/txv_telefono"
                     android:layout_width="match_parent"
@@ -170,7 +170,7 @@
                     android:layout_marginHorizontal="10sp"
                     android:textSize="18sp"
                     android:textColor="@color/black"
-                    android:text="Correo"/>
+                    android:text="@string/correo"/>
                 <TextView
                     android:id="@+id/txv_correo"
                     android:layout_width="match_parent"
@@ -195,7 +195,7 @@
                     android:layout_marginHorizontal="10sp"
                     android:textSize="18sp"
                     android:textColor="@color/black"
-                    android:text="Dirección"/>
+                    android:text="@string/direccion"/>
                 <TextView
                     android:id="@+id/txv_direccion"
                     android:layout_width="match_parent"
@@ -221,7 +221,7 @@
                     android:layout_marginHorizontal="10sp"
                     android:textSize="18sp"
                     android:textColor="@color/black"
-                    android:text="Estado civil"/>
+                    android:text="@string/estado_civil"/>
                 <TextView
                     android:id="@+id/txv_estado_civil"
                     android:layout_width="match_parent"
@@ -247,7 +247,7 @@
                     android:layout_marginHorizontal="10sp"
                     android:textSize="18sp"
                     android:textColor="@color/black"
-                    android:text="Crónicas"/>
+                    android:text="@string/cronicas"/>
                 <TextView
                     android:id="@+id/txv_cronicas"
                     android:layout_width="match_parent"
@@ -273,7 +273,7 @@
                     android:layout_marginHorizontal="10sp"
                     android:textSize="18sp"
                     android:textColor="@color/black"
-                    android:text="Nacionalidad"/>
+                    android:text="@string/nacimiento"/>
                 <TextView
                     android:id="@+id/txv_nacionalidad"
                     android:layout_width="match_parent"

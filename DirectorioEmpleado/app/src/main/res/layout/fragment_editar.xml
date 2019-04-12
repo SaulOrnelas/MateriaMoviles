@@ -73,7 +73,7 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_weight="2"
-                    android:text="Id"
+                    android:text="@string/id"
                     android:textColor="@color/black"
                     android:textSize="18sp" />
 
@@ -95,7 +95,7 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_weight="2"
-                    android:text="Nombre"
+                    android:text="@string/nombre"
                     android:textColor="@color/black"
                     android:textSize="18sp" />
 
@@ -116,7 +116,7 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_weight="2"
-                    android:text="Apellido"
+                    android:text="@string/apellido"
                     android:textColor="@color/black"
                     android:textSize="18sp" />
 
@@ -137,7 +137,7 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_weight="2"
-                    android:text="Fec nacimiento"
+                    android:text="@string/nacimiento"
                     android:textColor="@color/black"
                     android:textSize="18sp" />
 
@@ -159,7 +159,7 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_weight="2"
-                    android:text="Area"
+                    android:text="@string/area"
                     android:textColor="@color/black"
                     android:textSize="18sp" />
 
@@ -180,7 +180,7 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_weight="2"
-                    android:text="Teléfono"
+                    android:text="@string/telefono"
                     android:textColor="@color/black"
                     android:textSize="18sp" />
 
@@ -202,7 +202,7 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_weight="2"
-                    android:text="Correo"
+                    android:text="@string/correo"
                     android:textColor="@color/black"
                     android:textSize="18sp" />
 
@@ -224,7 +224,7 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_weight="2"
-                    android:text="Dirección"
+                    android:text="@string/direccion"
                     android:textColor="@color/black"
                     android:textSize="18sp" />
 
@@ -245,7 +245,7 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_weight="2"
-                    android:text="Nomina"
+                    android:text="@string/nomina"
                     android:textColor="@color/black"
                     android:textSize="18sp" />
 
@@ -267,7 +267,7 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_weight="2"
-                    android:text="Puesto"
+                    android:text="@string/puesto"
                     android:textColor="@color/black"
                     android:textSize="18sp" />
 
@@ -288,7 +288,7 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_weight="2"
-                    android:text="Estado civil"
+                    android:text="@string/estado_civil"
                     android:textColor="@color/black"
                     android:textSize="18sp" />
 
@@ -309,7 +309,7 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_weight="2"
-                    android:text="Curp"
+                    android:text="@string/curp"
                     android:textColor="@color/black"
                     android:textSize="18sp" />
 
@@ -330,7 +330,7 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_weight="2"
-                    android:text="NSS"
+                    android:text="@string/nss"
                     android:textColor="@color/black"
                     android:textSize="18sp" />
 
@@ -351,7 +351,7 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_weight="2"
-                    android:text="Crónicas"
+                    android:text="@string/cronicas"
                     android:textColor="@color/black"
                     android:textSize="18sp" />
 
@@ -372,7 +372,7 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_weight="2"
-                    android:text="Cont emergen"
+                    android:text="@string/contEmergencia"
                     android:textColor="@color/black"
                     android:textSize="18sp" />
 
@@ -393,7 +393,7 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_weight="2"
-                    android:text="Escolaridad"
+                    android:text="@string/escolaridad"
                     android:textColor="@color/black"
                     android:textSize="18sp" />
 
@@ -414,7 +414,7 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_weight="2"
-                    android:text="Nacionalidad"
+                    android:text="@string/nacionalidad"
                     android:textColor="@color/black"
                     android:textSize="18sp" />
 
@@ -435,7 +435,7 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_weight="2"
-                    android:text="Status"
+                    android:text="@string/status"
                     android:textColor="@color/black"
                     android:textSize="18sp" />
 
@@ -463,7 +463,7 @@
                     android:layout_marginStart="30dp"
                     android:layout_marginLeft="30dp"
                     android:layout_marginTop="20dp"
-                    android:text="Modificar"
+                    android:text="@string/modificar"
                     android:textColor="@color/black"
                     android:textSize="18sp" />
 
@@ -478,7 +478,7 @@
                     android:layout_marginTop="20dp"
                     android:layout_marginEnd="30dp"
                     android:layout_marginRight="30dp"
-                    android:text="Eliminar"
+                    android:text="@string/eliminar"
                     android:textColor="@color/black"
                     android:textSize="18sp" />
 
