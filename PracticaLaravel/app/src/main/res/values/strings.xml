@@ -1,0 +1,12 @@
+<resources>
+    <string name="app_name">PracticaLaravel</string>
+    <string name="id">Id</string>
+    <string name="nombre">Nombre</string>
+    <string name="precio">Precio</string>
+    <string name="descripcion">Descripción</string>
+    <string name="buscar">Buscar</string>
+    <string name="agregar">Agregar</string>
+    <string name="modificar">Modificar</string>
+    <string name="eliminar">Eliminar</string>
+    <string name="limpiar">Limpiar campos</string>
+</resources>
